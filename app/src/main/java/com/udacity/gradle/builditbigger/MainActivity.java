@@ -73,6 +73,7 @@ public class MainActivity extends ActionBarActivity {
 
             @Override
             public void onError(Exception e) {
+                progressBar.setVisibility(View.GONE);
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle("Error")
                         .setMessage(e.getLocalizedMessage())
@@ -81,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
                             }
-                        });
+                        }).show();
 
             }
         });
